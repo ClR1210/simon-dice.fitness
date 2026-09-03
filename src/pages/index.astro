@@ -1,22 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Contacto Simón
-const WHATSAPP_NUM = "569XXXXXXXX"; // Reemplazar por su número
-const MSG_BASE = encodeURIComponent("¡Hola Simón! Quiero inscribirme en los entrenamientos. ¿Me das info de cupos y horarios?");
+// Contactos Oficiales
+const WHATSAPP_NUM = "56937324552"; 
+const CALENDLY_URL = "https://calendly.com/larosarocuant/new-meeting"; 
+
+const MSG_BASE = encodeURIComponent("¡Hola Simón! Quiero pedirte información sobre los entrenamientos.");
 const WA_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${MSG_BASE}`;
 ---
 
-<Layout title="SIMON DICE FITNESS | Taller de Boxeo y Entrenamiento">
+<Layout title="SIMON DICE FITNESS | Taller de Boxeo y Preparador Físico">
   <!-- HERO CON FONDO OFICIAL -->
   <header class="relative min-h-[95vh] flex items-center justify-center text-center px-4 overflow-hidden">
-    <!-- Imagen de fondo (Pared de ladrillo y logo oficial) -->
     <div 
       class="absolute inset-0 bg-cover bg-center bg-no-repeat filter brightness-40 scale-105" 
       style="background-image: url('/banner-fondo.jpeg');"
     ></div>
 
-    <!-- Capa de degradado oscuro para contraste -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-brand-dark/70 to-brand-dark pointer-events-none"></div>
 
     <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center pt-8" data-aos="zoom-in">
@@ -44,130 +44,154 @@ const WA_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${MSG_BASE}`;
 
       <div class="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md">
         <a 
-          href="#planes" 
+          href="#servicios" 
           class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-brand-gold hover:bg-brand-goldLight text-black font-extrabold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg shadow-brand-gold/20"
         >
-          Ver Planes y Cupos
+          Ver Servicios
         </a>
         <a 
           href={WA_LINK} 
           target="_blank" 
           class="w-full sm:w-auto px-8 py-3.5 rounded-lg border border-neutral-700 bg-brand-card/80 backdrop-blur-sm hover:bg-neutral-900 text-white font-semibold uppercase tracking-wider transition-all"
         >
-          Consultar por WhatsApp
+          Consultar WhatsApp
         </a>
       </div>
     </div>
   </header>
 
-  <!-- SECCIÓN HORARIOS -->
-  <section class="py-16 px-4 bg-black/60 border-y border-brand-border backdrop-blur-md">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-center text-3xl font-black uppercase text-brand-gold tracking-wider mb-10" data-aos="fade-up">
-        ★ Horarios Taller de Boxeo ★
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/60 transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="100">
-          <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Lunes</span>
-          <p class="text-2xl font-black mt-2 text-white">22:15 - 23:30</p>
-        </div>
-
-        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/60 transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="200">
-          <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Miércoles</span>
-          <p class="text-2xl font-black mt-2 text-white">22:30 - 23:45</p>
-        </div>
-
-        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/60 transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="300">
-          <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Jueves</span>
-          <p class="text-2xl font-black mt-2 text-white">22:30 - 23:45</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN AFICHE Y DETALLES -->
-  <section class="py-20 px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-    <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-right">
-      <div class="relative group max-w-sm rounded-2xl overflow-hidden border-2 border-brand-border hover:border-brand-gold transition duration-500 shadow-2xl">
-        <img 
-          src="/afiche.jpg" 
-          alt="Afiche Taller de Boxeo" 
-          class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500"
-        />
-      </div>
-    </div>
-
-    <div class="w-full md:w-1/2 space-y-6 text-center md:text-left" data-aos="fade-left">
-      <h2 class="text-3xl md:text-4xl font-extrabold uppercase text-white leading-tight">
-        Aprende Técnica, Fuerza y <span class="text-brand-gold">Disciplina</span>
-      </h2>
-      <p class="text-neutral-400 leading-relaxed">
-        Clases diseñadas tanto para quienes parten desde cero como para quienes buscan mejorar su resistencia y pegada. Entrenamiento funcional, guardia, desplazamientos y manopleo directo.
-      </p>
-      
-      <div class="bg-brand-card p-4 rounded-xl border border-brand-border flex items-center gap-4 justify-center md:justify-start">
-        <div class="text-2xl text-brand-gold">📍</div>
-        <div class="text-left">
-          <p class="text-xs text-neutral-400 uppercase tracking-widest font-semibold">Ubicación</p>
-          <p class="text-white font-bold">Sede Villa Nocedal 1, San Bernardo</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN PLANES / TRANSFERENCIA -->
-  <section id="planes" class="py-20 px-4 max-w-5xl mx-auto">
-    <h2 class="text-center text-4xl font-extrabold uppercase mb-4" data-aos="fade-up">
-      Niveles de <span class="text-brand-gold">Entrenamiento</span>
+  <!-- SECCIÓN DOS CAMINOS (SPLIT SCREEN) -->
+  <section id="servicios" class="py-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-center text-4xl font-extrabold uppercase mb-12" data-aos="fade-up">
+      Elige tu <span class="text-brand-gold">Entrenamiento</span>
     </h2>
-    <p class="text-center text-neutral-400 max-w-xl mx-auto mb-14" data-aos="fade-up" data-aos-delay="100">
-      Elige tu plan, transfiere para asegurar tu cupo y envía el comprobante por WhatsApp.
-    </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-      <!-- PLAN BÁSICO -->
-      <div class="bg-brand-card border border-brand-border rounded-2xl p-8 flex flex-col justify-between hover:border-brand-gold transition-all" data-aos="fade-right">
-        <div>
-          <h3 class="text-2xl font-bold uppercase text-white">Plan Básico</h3>
-          <p class="text-neutral-400 text-sm mt-1">2 clases por semana</p>
-          <div class="mt-6 text-3xl font-black text-brand-gold">$20.000 <span class="text-xs text-neutral-400 font-normal">/ mes</span></div>
-          <ul class="mt-6 space-y-3 text-sm text-neutral-300">
-            <li class="flex items-center gap-2">✔ Fundamentos de guardia y desplazamiento</li>
-            <li class="flex items-center gap-2">✔ Acondicionamiento físico general</li>
-            <li class="flex items-center gap-2">✔ Acceso a sede San Bernardo</li>
-          </ul>
-        </div>
-        <a 
-          href={`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent("Hola Simón, quiero pagar por transferencia el Plan Básico.")}`}
-          target="_blank"
-          class="mt-8 block text-center py-3 rounded-lg border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black font-bold uppercase text-sm transition-all"
-        >
-          Pagar por Transferencia
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- CAMINO 1: TALLER GRUPAL -->
+      <div class="bg-brand-card border-2 border-brand-border hover:border-brand-gold/50 rounded-2xl p-8 text-center flex flex-col items-center transition-all" data-aos="fade-right">
+        <div class="text-5xl mb-4">🥊</div>
+        <h3 class="text-2xl font-black uppercase text-white mb-2">Taller de Boxeo</h3>
+        <p class="text-neutral-400 mb-6">Entrenamiento grupal enfocado en técnica, acondicionamiento y guanteo. Ideal para todos los niveles.</p>
+        <a href="#taller-info" class="mt-auto px-6 py-3 w-full border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black font-bold uppercase rounded-lg transition-colors">
+          Ver Taller y Planes
         </a>
       </div>
 
-      <!-- PLAN FULL -->
-      <div class="bg-gradient-to-b from-brand-card to-[#1a160d] border-2 border-brand-gold rounded-2xl p-8 flex flex-col justify-between shadow-xl shadow-brand-gold/10 relative" data-aos="fade-left">
-        <span class="absolute -top-3 right-6 bg-brand-gold text-black text-xs font-black uppercase px-3 py-1 rounded-full">Más Popular</span>
-        <div>
-          <h3 class="text-2xl font-bold uppercase text-white">Plan Completo</h3>
-          <p class="text-neutral-400 text-sm mt-1">3 clases por semana (Todos los días del taller)</p>
-          <div class="mt-6 text-3xl font-black text-brand-gold">$25.000 <span class="text-xs text-neutral-400 font-normal">/ mes</span></div>
-          <ul class="mt-6 space-y-3 text-sm text-neutral-300">
-            <li class="flex items-center gap-2">✔ Lunes, Miércoles y Jueves</li>
-            <li class="flex items-center gap-2">✔ Trabajo en saco, manoplas y sparring guiado</li>
-            <li class="flex items-center gap-2">✔ Corrección técnica intensiva</li>
-          </ul>
-        </div>
-        <a 
-          href={`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent("Hola Simón, quiero pagar por transferencia el Plan Completo.")}`}
-          target="_blank"
-          class="mt-8 block text-center py-3 rounded-lg bg-brand-gold hover:bg-brand-goldLight text-black font-bold uppercase text-sm transition-all"
-        >
-          Pagar por Transferencia
+      <!-- CAMINO 2: PREPARADOR FÍSICO / CLASES PARTICULARES -->
+      <div class="bg-brand-card border-2 border-brand-border hover:border-brand-gold/50 rounded-2xl p-8 text-center flex flex-col items-center transition-all" data-aos="fade-left">
+        <div class="text-5xl mb-4">⚡</div>
+        <h3 class="text-2xl font-black uppercase text-white mb-2">Preparador Físico</h3>
+        <p class="text-neutral-400 mb-6">Clases particulares 1 a 1. Acondicionamiento funcional, hipertrofia o boxeo personalizado según tu horario.</p>
+        <a href="#agenda-calendly" class="mt-auto px-6 py-3 w-full bg-brand-gold text-black hover:bg-brand-goldLight font-bold uppercase rounded-lg transition-colors shadow-lg shadow-brand-gold/20">
+          Agendar Evaluación
         </a>
       </div>
     </div>
   </section>
+
+  <!-- DETALLES DEL TALLER GRUPAL -->
+  <div id="taller-info" class="pt-10 pb-4">
+    <!-- Horarios -->
+    <section class="py-16 px-4 bg-black/60 border-y border-brand-border backdrop-blur-md">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-center text-3xl font-black uppercase text-brand-gold tracking-wider mb-10" data-aos="fade-up">
+          ★ Horarios Taller Grupal ★
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Lunes</span>
+            <p class="text-2xl font-black mt-2 text-white">22:15 - 23:30</p>
+          </div>
+          <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Miércoles</span>
+            <p class="text-2xl font-black mt-2 text-white">22:30 - 23:45</p>
+          </div>
+          <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="300">
+            <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Jueves</span>
+            <p class="text-2xl font-black mt-2 text-white">22:30 - 23:45</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Afiche y Planes -->
+    <section class="py-20 px-4 max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+        <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-right">
+          <div class="relative group max-w-sm rounded-2xl overflow-hidden border-2 border-brand-border shadow-2xl">
+            <img src="/afiche.jpg" alt="Afiche Taller de Boxeo" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 space-y-6 text-center md:text-left" data-aos="fade-left">
+          <h2 class="text-3xl md:text-4xl font-extrabold uppercase text-white leading-tight">
+            Aprende Técnica y <span class="text-brand-gold">Disciplina</span>
+          </h2>
+          <p class="text-neutral-400 leading-relaxed">
+            Entrenamiento funcional, guardia, desplazamientos y manopleo directo en nuestra sede.
+          </p>
+          <div class="bg-brand-card p-4 rounded-xl border border-brand-border flex items-center gap-4 justify-center md:justify-start">
+            <div class="text-2xl text-brand-gold">📍</div>
+            <div class="text-left">
+              <p class="text-xs text-neutral-400 uppercase tracking-widest font-semibold">Ubicación</p>
+              <p class="text-white font-bold">Sede Villa Nocedal 1, San Bernardo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Planes sin precio -->
+      <h3 class="text-center text-3xl font-extrabold uppercase mb-8" data-aos="fade-up">Planes del <span class="text-brand-gold">Taller</span></h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 flex flex-col justify-between" data-aos="fade-right">
+          <div>
+            <h4 class="text-2xl font-bold uppercase text-white">Plan Básico</h4>
+            <p class="text-neutral-400 text-sm mt-1">2 clases por semana</p>
+            <ul class="mt-6 space-y-3 text-sm text-neutral-300">
+              <li class="flex items-center gap-2">✔ Fundamentos de guardia y desplazamiento</li>
+              <li class="flex items-center gap-2">✔ Acondicionamiento físico general</li>
+            </ul>
+          </div>
+          <a href={`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent("Hola Simón, quiero inscribirme al Taller con el Plan Básico. Te envío comprobante.")}`} target="_blank" class="mt-8 block text-center py-3 rounded-lg border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black font-bold uppercase text-sm transition-all">
+            Inscribirme (Transferencia)
+          </a>
+        </div>
+
+        <div class="bg-gradient-to-b from-brand-card to-[#1a160d] border-2 border-brand-gold rounded-2xl p-8 flex flex-col justify-between relative" data-aos="fade-left">
+          <span class="absolute -top-3 right-6 bg-brand-gold text-black text-xs font-black uppercase px-3 py-1 rounded-full">Recomendado</span>
+          <div>
+            <h4 class="text-2xl font-bold uppercase text-white">Plan Completo</h4>
+            <p class="text-neutral-400 text-sm mt-1">3 clases por semana</p>
+            <ul class="mt-6 space-y-3 text-sm text-neutral-300">
+              <li class="flex items-center gap-2">✔ Lunes, Miércoles y Jueves</li>
+              <li class="flex items-center gap-2">✔ Trabajo en saco, manoplas y sparring</li>
+            </ul>
+          </div>
+          <a href={`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent("Hola Simón, quiero inscribirme al Taller con el Plan Completo. Te envío comprobante.")}`} target="_blank" class="mt-8 block text-center py-3 rounded-lg bg-brand-gold hover:bg-brand-goldLight text-black font-bold uppercase text-sm transition-all">
+            Inscribirme (Transferencia)
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SECCIÓN CALENDLY PARA PARTICULARES -->
+  <section id="agenda-calendly" class="py-20 px-4 bg-black border-t border-brand-border">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold uppercase text-white">
+          Agenda tu <span class="text-brand-gold">Clase Particular</span>
+        </h2>
+        <p class="text-neutral-400 mt-4 max-w-xl mx-auto">
+          Selecciona el día y la hora que más te acomode para tu sesión 1 a 1 de boxeo o preparación física.
+        </p>
+      </div>
+
+      <!-- Widget Calendly -->
+      <div class="bg-brand-card border border-brand-border rounded-xl p-2 md:p-4 shadow-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <div class="calendly-inline-widget" data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=141414&text_color=ffffff&primary_color=e5a93c`} style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </section>
+
 </Layout>
