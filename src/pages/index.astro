@@ -1,41 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Datos de contacto de Simón
-const WHATSAPP_NUM = "569XXXXXXXX"; // Reemplazar por su WhatsApp real
-const MSG_BASE = encodeURIComponent("¡Hola Simón! Quiero inscribirme en el Taller de Boxeo. ¿Me das información de cupos?");
+// Contacto Simón
+const WHATSAPP_NUM = "569XXXXXXXX"; // Reemplazar por su número
+const MSG_BASE = encodeURIComponent("¡Hola Simón! Quiero inscribirme en los entrenamientos. ¿Me das info de cupos y horarios?");
 const WA_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${MSG_BASE}`;
 ---
 
-<Layout title="SIMON DICE BOX | Taller de Boxeo en San Bernardo">
-  <!-- HERO SECTION -->
-  <header class="relative min-h-[90vh] flex items-center justify-center text-center px-4 bg-gradient-to-b from-black via-brand-dark to-brand-dark overflow-hidden">
-    <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#E5A93C_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+<Layout title="SIMON DICE FITNESS | Taller de Boxeo y Entrenamiento">
+  <!-- HERO CON FONDO OFICIAL -->
+  <header class="relative min-h-[95vh] flex items-center justify-center text-center px-4 overflow-hidden">
+    <!-- Imagen de fondo (Pared de ladrillo y logo oficial) -->
+    <div 
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat filter brightness-40 scale-105" 
+      style="background-image: url('/banner-fondo.jpeg');"
+    ></div>
 
-    <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center" data-aos="zoom-in">
-      <div class="inline-block border border-brand-gold/40 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+    <!-- Capa de degradado oscuro para contraste -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-brand-dark/70 to-brand-dark pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center pt-8" data-aos="zoom-in">
+      <!-- Logo Circular Oficial -->
+      <div class="relative mb-6 group">
+        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-brand-gold to-yellow-600 opacity-75 blur-md group-hover:opacity-100 transition duration-500"></div>
+        <img 
+          src="/logo-circular.jpeg" 
+          alt="Simon Dice Fitness Logo" 
+          class="relative w-36 h-36 md:w-44 md:h-44 rounded-full border-2 border-brand-gold object-cover shadow-2xl"
+        />
+      </div>
+
+      <div class="inline-block border border-brand-gold/40 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-4 backdrop-blur-sm">
         Sede Villa Nocedal 1 • San Bernardo
       </div>
       
-      <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400">
-        SIMON DICE <span class="text-brand-gold block md:inline drop-shadow-[0_0_25px_rgba(229,169,60,0.4)]">BOX</span>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight uppercase text-white drop-shadow-md">
+        SIMON DICE <span class="text-brand-gold block md:inline drop-shadow-[0_0_20px_rgba(229,169,60,0.5)]">FITNESS</span>
       </h1>
 
-      <p class="text-xl md:text-2xl text-neutral-300 font-semibold italic mt-4 mb-8">
+      <p class="text-lg md:text-2xl text-neutral-300 font-semibold italic mt-4 mb-8">
         "El esfuerzo de hoy es la fuerza de mañana."
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md">
         <a 
           href="#planes" 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-brand-gold hover:bg-brand-goldLight text-black font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg shadow-brand-gold/20"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-brand-gold hover:bg-brand-goldLight text-black font-extrabold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg shadow-brand-gold/20"
         >
           Ver Planes y Cupos
         </a>
         <a 
           href={WA_LINK} 
           target="_blank" 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-lg border border-neutral-700 bg-brand-card hover:bg-neutral-900 text-white font-semibold uppercase tracking-wider transition-all"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-lg border border-neutral-700 bg-brand-card/80 backdrop-blur-sm hover:bg-neutral-900 text-white font-semibold uppercase tracking-wider transition-all"
         >
           Consultar por WhatsApp
         </a>
@@ -43,25 +60,25 @@ const WA_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${MSG_BASE}`;
     </div>
   </header>
 
-  <!-- HORARIOS -->
-  <section class="py-16 px-4 bg-black/40 border-y border-brand-border">
+  <!-- SECCIÓN HORARIOS -->
+  <section class="py-16 px-4 bg-black/60 border-y border-brand-border backdrop-blur-md">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-center text-3xl font-black uppercase text-brand-gold tracking-wider mb-10" data-aos="fade-up">
-        ★ Horarios de Entrenamiento ★
+        ★ Horarios Taller de Boxeo ★
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/50 transition-colors" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/60 transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="100">
           <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Lunes</span>
           <p class="text-2xl font-black mt-2 text-white">22:15 - 23:30</p>
         </div>
 
-        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/50 transition-colors" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/60 transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="200">
           <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Miércoles</span>
           <p class="text-2xl font-black mt-2 text-white">22:30 - 23:45</p>
         </div>
 
-        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/50 transition-colors" data-aos="fade-up" data-aos-delay="300">
+        <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-gold/60 transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="300">
           <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">Jueves</span>
           <p class="text-2xl font-black mt-2 text-white">22:30 - 23:45</p>
         </div>
@@ -69,13 +86,43 @@ const WA_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${MSG_BASE}`;
     </div>
   </section>
 
-  <!-- PLANES Y TRANSFERENCIA -->
+  <!-- SECCIÓN AFICHE Y DETALLES -->
+  <section class="py-20 px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-right">
+      <div class="relative group max-w-sm rounded-2xl overflow-hidden border-2 border-brand-border hover:border-brand-gold transition duration-500 shadow-2xl">
+        <img 
+          src="/afiche.jpg" 
+          alt="Afiche Taller de Boxeo" 
+          class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500"
+        />
+      </div>
+    </div>
+
+    <div class="w-full md:w-1/2 space-y-6 text-center md:text-left" data-aos="fade-left">
+      <h2 class="text-3xl md:text-4xl font-extrabold uppercase text-white leading-tight">
+        Aprende Técnica, Fuerza y <span class="text-brand-gold">Disciplina</span>
+      </h2>
+      <p class="text-neutral-400 leading-relaxed">
+        Clases diseñadas tanto para quienes parten desde cero como para quienes buscan mejorar su resistencia y pegada. Entrenamiento funcional, guardia, desplazamientos y manopleo directo.
+      </p>
+      
+      <div class="bg-brand-card p-4 rounded-xl border border-brand-border flex items-center gap-4 justify-center md:justify-start">
+        <div class="text-2xl text-brand-gold">📍</div>
+        <div class="text-left">
+          <p class="text-xs text-neutral-400 uppercase tracking-widest font-semibold">Ubicación</p>
+          <p class="text-white font-bold">Sede Villa Nocedal 1, San Bernardo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PLANES / TRANSFERENCIA -->
   <section id="planes" class="py-20 px-4 max-w-5xl mx-auto">
     <h2 class="text-center text-4xl font-extrabold uppercase mb-4" data-aos="fade-up">
-      Elige tu Nivel de <span class="text-brand-gold">Entrenamiento</span>
+      Niveles de <span class="text-brand-gold">Entrenamiento</span>
     </h2>
     <p class="text-center text-neutral-400 max-w-xl mx-auto mb-14" data-aos="fade-up" data-aos-delay="100">
-      Transfiere directo a los datos de cuenta y confirma por WhatsApp enviando tu comprobante para reservar tu cupo.
+      Elige tu plan, transfiere para asegurar tu cupo y envía el comprobante por WhatsApp.
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -86,8 +133,8 @@ const WA_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${MSG_BASE}`;
           <p class="text-neutral-400 text-sm mt-1">2 clases por semana</p>
           <div class="mt-6 text-3xl font-black text-brand-gold">$20.000 <span class="text-xs text-neutral-400 font-normal">/ mes</span></div>
           <ul class="mt-6 space-y-3 text-sm text-neutral-300">
-            <li class="flex items-center gap-2">✔ Técnica de golpeo y guardia</li>
-            <li class="flex items-center gap-2">✔ Acondicionamiento físico</li>
+            <li class="flex items-center gap-2">✔ Fundamentos de guardia y desplazamiento</li>
+            <li class="flex items-center gap-2">✔ Acondicionamiento físico general</li>
             <li class="flex items-center gap-2">✔ Acceso a sede San Bernardo</li>
           </ul>
         </div>
@@ -102,15 +149,15 @@ const WA_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${MSG_BASE}`;
 
       <!-- PLAN FULL -->
       <div class="bg-gradient-to-b from-brand-card to-[#1a160d] border-2 border-brand-gold rounded-2xl p-8 flex flex-col justify-between shadow-xl shadow-brand-gold/10 relative" data-aos="fade-left">
-        <span class="absolute -top-3 right-6 bg-brand-gold text-black text-xs font-black uppercase px-3 py-1 rounded-full">Recomendado</span>
+        <span class="absolute -top-3 right-6 bg-brand-gold text-black text-xs font-black uppercase px-3 py-1 rounded-full">Más Popular</span>
         <div>
           <h3 class="text-2xl font-bold uppercase text-white">Plan Completo</h3>
-          <p class="text-neutral-400 text-sm mt-1">3 clases por semana (Todos los días)</p>
+          <p class="text-neutral-400 text-sm mt-1">3 clases por semana (Todos los días del taller)</p>
           <div class="mt-6 text-3xl font-black text-brand-gold">$25.000 <span class="text-xs text-neutral-400 font-normal">/ mes</span></div>
           <ul class="mt-6 space-y-3 text-sm text-neutral-300">
             <li class="flex items-center gap-2">✔ Lunes, Miércoles y Jueves</li>
-            <li class="flex items-center gap-2">✔ Manopleo, costal y sparring controlado</li>
-            <li class="flex items-center gap-2">✔ Seguimiento y técnica personalizada</li>
+            <li class="flex items-center gap-2">✔ Trabajo en saco, manoplas y sparring guiado</li>
+            <li class="flex items-center gap-2">✔ Corrección técnica intensiva</li>
           </ul>
         </div>
         <a 
